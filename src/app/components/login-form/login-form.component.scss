@@ -1,0 +1,124 @@
+@import "/src/scss/base";
+
+.login__form {
+  background-color: #fff;
+  width: 350px;
+  padding: 25px 20px;
+  border-radius: 5px;
+  box-shadow: 5px 4px 3px 0px rgb(0 0 0 / 5%);
+
+  &--title {
+    margin-bottom: 25px;
+  }
+
+  &--footer {
+    border-top: 2px solid lightgray;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 18px;
+
+    a {
+      font-size: 12px;
+    }
+  }
+}
+
+
+.form__group {
+  position: relative;
+
+  .form__control {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    margin-bottom: 25px;
+
+
+    &.ng-touched {
+      & + .form__label {
+        top: 36px;
+      }
+    }
+
+    &.ng-invalid {
+      & + .form__label {
+        top: 14px;
+      }
+    }
+
+
+    & + .form__label {
+      position: absolute;
+      top: 14px;
+      left: 3px;
+      font-weight: bold;
+      transition: all .2s ease;
+    }
+
+    &:focus {
+      outline: none;
+      border-width: 2px;
+    }
+  }
+
+
+  &--login-btn {
+    border: none;
+    background-color: $primary-color;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    text-transform: uppercase;
+  }
+
+}
+
+#email {
+  &.ng-dirty {
+    border-color: red;
+  }
+
+  &.ng-valid {
+    border-color: darkgrey;
+  }
+
+}
+
+.mail-validation {
+  top: 36px !important;
+  font-size: 11px;
+}
+
+#password {
+  &.ng-valid {
+    & + .form__label {
+      top: 36px;
+      font-size: 11px;
+    }
+  }
+
+}
+
+.error-email {
+  position: absolute;
+  top: 36px;
+  font-size: 10px;
+  right: 0;
+  color: red;
+}
+
+.credentials__error {
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+
+
+
+

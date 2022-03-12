@@ -1,0 +1,26 @@
+<div class="login__form">
+  <div class="login__form--title">
+    <h1>Login</h1>
+  </div>
+  <div *ngIf="credentialsValidation" class="credentials__error">
+    <small>Please enter a valid Email and Password</small>
+  </div>
+  <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form__group">
+      <input type="email" id="email" formControlName="email" class="form__control">
+      <label for="email" [ngClass]="minLengthOfEmail ? 'mail-validation' : ''" class="form__label">Email</label>
+      <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].dirty" class="error-email">
+        <small>Please eneter a valid Email</small>
+      </div>
+    </div>
+    <div class="form__group">
+      <input type="password"  formControlName="password" id="password" class="form__control">
+      <label for="password" class="form__label">Password</label>
+    </div>
+    <button type="submit" class="form__group--login-btn">Login</button>
+  </form>
+  <div class="login__form--footer">
+    <a (click)="pswForgot()" class="login__form--psw link" href="#">Forgot password?</a>
+    <a (click)="register()" class="login__form--register link" href="#">Have no account?</a>
+  </div>
+</div>
